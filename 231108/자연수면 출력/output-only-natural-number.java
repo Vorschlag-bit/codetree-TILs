@@ -9,7 +9,7 @@ public class Main {
             for(long i =1;i<=b;i++)
             System.out.print(a);
         }
-        else if(a<0){
+        else if(a<=0){
             System.out.print(0);
         }
     }
