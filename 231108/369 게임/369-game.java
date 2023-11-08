@@ -8,10 +8,10 @@ public class Main {
             if(i%3==0){
                 System.out.print("0 ");
             }
-            else if(i>10&&(i/10)%3==0){
+            else if(i/10==3||i/10==6||i/10==9){
                 System.out.print("0 ");
             }
-            else if(i>10&&((i+1)%3==0||(i-1)%3==0)){
+            else if(i%10==3||i%10==6||i%10==9){
                 System.out.print("0 ");
             }
             else System.out.print(i+" ");
