@@ -15,6 +15,6 @@ public class Main {
                 cnt2++;
             }
         }
-        System.out.print(cnt1+" "+cnt2);
+        System.out.print(cnt2+" "+cnt1);
     }
 }
