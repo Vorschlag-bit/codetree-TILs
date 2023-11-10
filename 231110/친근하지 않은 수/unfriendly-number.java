@@ -6,9 +6,10 @@ public class Main {
         long n = sc.nextInt();
         long cnt=0;
         for(long i =1;i<=n;i++){
-            if(i%2!=0&&i%3!=0&&i%5!=0){
-                cnt+=1;
+            if(i%2==0||i%3==0||i%5==0){
+                continue;
             }
+            cnt+=1;
         }
         System.out.print(cnt);
     }
