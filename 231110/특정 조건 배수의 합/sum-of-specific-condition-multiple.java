@@ -6,9 +6,17 @@ public class Main {
         long a = sc.nextInt();
         long b = sc.nextInt();
         long sum=0;
+        if(b>=a){
         for(long i =a;i<=b;i++){
             if(i%5==0){
                 sum+=i;
+            }
+        }}
+        else{
+            for(long i =b;i<=a;i++){
+                if(i%5==0){
+                    sum+=i;
+                }
             }
         }
         System.out.print(sum);
