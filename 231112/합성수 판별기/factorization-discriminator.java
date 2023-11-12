@@ -5,8 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
         boolean state =false;
-        for(long i =1;i<=n;i++){
-            if(n%i==0&&i>1){
+        for(long i =2;i<=n;i++){
+            if(n%i==0){
                 state = true;
             }
             }
