@@ -5,9 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         long cnt=0;
         boolean state = true;
-        while(cnt==5){
+        for(long i = 1; i<=5;i++){
             long a = sc.nextLong();
-            cnt++;
             if(a%3!=0){
             state = false;
             break;
