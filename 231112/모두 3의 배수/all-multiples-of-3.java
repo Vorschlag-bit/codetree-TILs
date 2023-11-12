@@ -10,6 +10,7 @@ public class Main {
             cnt++;
             if(a%3!=0){
             state = false;
+            break;
         }
         }
         if(state==true){
