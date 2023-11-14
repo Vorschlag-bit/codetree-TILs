@@ -5,12 +5,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
         for(long i =1; i<=n;i++){
-            for(long j = 1;j<=i;j++){
-                for(long a = 1;a<=2*a-1;a++){
+            for(long j = 1;j<=2*i-1;j++){
                     System.out.print("*");
                 }
+                System.out.println();
             }
-            System.out.println();
         }
     }
-}
