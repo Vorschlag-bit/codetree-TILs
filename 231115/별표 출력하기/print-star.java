@@ -10,7 +10,7 @@ public class Main {
             }
             System.out.println();
         }
-        for(long i = n-1;i>=0 ;i--){
+        for(long i = n-1;i>=1 ;i--){
             for(long j =1;j<=i;j++){
                 System.out.print("* ");
             }
