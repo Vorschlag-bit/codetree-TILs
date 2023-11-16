@@ -17,7 +17,7 @@ public class Main {
             for(long j = n-2-i;j>0;j--){
                 System.out.print("  ");
             }
-            for(long j = 0;j<3+2*i;j++){
+            for(long j = 0;j<n-1+2*i;j++){
                 System.out.print("* ");
             }
             System.out.println();
