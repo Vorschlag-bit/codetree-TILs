@@ -8,7 +8,7 @@ public class Main {
             for(long j = n-i-1;j>0;j--){
                 System.out.print(" ");
             }
-            for(long j = 0;j<n-2+2*i;j++){
+            for(long j = 0;j<1+2*i;j++){
                 System.out.print("*");
             }
             System.out.println();
