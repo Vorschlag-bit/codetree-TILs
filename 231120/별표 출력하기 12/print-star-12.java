@@ -4,20 +4,12 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
-        for(long i = 0;i<n;i++){
-            for(long j = 0; j<n;j++){
-                if(j%2==0){
-                    if(i==0)
+        for(long i = 0; i<n;i++){
+            for(long j = 0; j<n; j++){
+                if(i==0||j%2==1&&(i<=j)){
                     System.out.print("* ");
-                    else
-                    System.out.print("  ");
                 }
-                else {
-                    if(i<=j)
-                    System.out.print("* ");
-                    else
-                    System.out.print("  ");
-                }
+                else System.out.print("  ");
             }
             System.out.println();
         }
