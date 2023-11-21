@@ -19,6 +19,7 @@ public class Main {
                 }
             }
             System.out.println();
+            minus=0;
         }
     }
 }
