@@ -5,11 +5,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
         for(long i = 0; i<n;i++){
-            for(long j = 0 ; j<i;j++){
+            for(long j = 0 ; j<n;j++){
+                if(i>j)
                 System.out.print("  ");
-            }
-            for(long j = n-i; j>0;j--){
-                System.out.print(j+" ");
+                else
+                System.out.print(n-j+" ");
             }
             System.out.println();
         }
