@@ -9,9 +9,9 @@ public class Main {
                 if(i==0)
                 System.out.print(j+1+" ");
                 else if(i%2==0)
-                System.out.print((i*n)+j+1+n+" ");
+                System.out.print((i*n)+j+1+n*i/2+" ");
                 else
-                System.out.print((i*n)+2*(j+1)+" ");
+                System.out.print((i*n)+2*(j+1)+n*(i/2)+" ");
             }
             System.out.println();
         }
