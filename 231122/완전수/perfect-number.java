@@ -11,9 +11,10 @@ public class Main {
             for(long j = 1;j<i;j++){
                 if(i%j==0){
                 sum+=j;
-                if(sum==i)
-                cnt++;}
+                }
             }
+            if(sum==i)
+                cnt++;
         }
         System.out.print(cnt);
     }
