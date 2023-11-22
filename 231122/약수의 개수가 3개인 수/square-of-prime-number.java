@@ -8,7 +8,7 @@ public class Main {
         long cut = 0;
         for(long i = start;i<=end;i++){
             long cnt = 0;
-            for(long j = 1;j<i;j++){
+            for(long j = 1;j<=i;j++){
                 if(i%j==0)
                 cnt++;
             }
