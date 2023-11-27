@@ -16,17 +16,27 @@ public class Main {
             arrB[i] = sc.nextInt();
         }
 
-        for(int i = 0; i<b-a; i++){
-          for(int j = 0; j<b; j++){
-            if(arrB[j]==arrA[j+i])
-            cnt++;
-            if(cnt==b)
-            break;
-          } 
+        for(int i = 0; i<a; i++){
+          boolean success = true;
+
+          for(int j = 0; j<a; j++){
+
+            if(i+j>=a){
+              success = false;
+              break;
+            }
+
+            if(arrA[i+j]!=arrB[j]){
+              success = false;
+              break;
+            }
+          }
+
+          if(success){
+            System.out.print("Yes");
+            System.exit(0);
+          }
         }
-        if(cnt>=b)
-        System.out.print("Yes");
-        else
-        System.out.print("No");
+System.out.print("No");
     }
 }
