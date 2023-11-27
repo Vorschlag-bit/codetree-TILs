@@ -5,8 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int[] arrA = new int[a];
-        int[] arrB = new int[b];
+        int[] arrA = new int[100];
+        int[] arrB = new int[100];
         int cnt = 0;
 
         for(int i = 0; i<a; i++){
@@ -19,7 +19,7 @@ public class Main {
         for(int i = 0; i<a; i++){
           boolean success = true;
 
-          for(int j = 0; j<a; j++){
+          for(int j = 0; j<b; j++){
 
             if(i+j>=a){
               success = false;
