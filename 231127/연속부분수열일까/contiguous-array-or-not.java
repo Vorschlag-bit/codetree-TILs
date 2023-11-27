@@ -16,12 +16,11 @@ public class Main {
             arrB[i] = sc.nextInt();
         }
 
-        for(int i = 0; i<a; i++){
+        for(int i = 0; i<a-b; i++){
           for(int j = 0; j<b; j++){
             if(arrB[j]==arrA[j+i])
             cnt++;
           } 
-          break; 
         }
         if(cnt>=b)
         System.out.print("Yes");
