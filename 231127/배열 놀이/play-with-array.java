@@ -21,23 +21,23 @@ public class Main {
                     System.out.print(arr[j]+" ");
                 }
                 System.out.println();
-            }
-            else{
+            } else {
             int b = sc.nextInt();
             if(a==1)
             System.out.println(arr[b]);
 
             else if(a==2){
                 for(int j = 1; j<=n; j++){
+                    idx=-1;
                     if(b==arr[j]){
                         idx=j;
                         break;
-                    }}
+                    }
+                    }
                     if(idx==-1)
                     System.out.println(0);
                     else
                     System.out.println(idx);
-                
             }
             }
         }
