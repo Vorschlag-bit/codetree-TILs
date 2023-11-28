@@ -17,7 +17,7 @@ public class Main {
         }
         else{
             max1 = arr[1];
-            max2 = arr[2];
+            max2 = arr[0];
         }
 
         for(int i = 2; i<n; i++){
