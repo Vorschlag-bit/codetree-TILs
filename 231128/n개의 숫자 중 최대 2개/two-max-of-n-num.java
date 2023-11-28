@@ -15,7 +15,7 @@ public class Main {
         for(int i = 0; i<n; i++){
             if(max1<=arr[i])
             max1 = arr[i];
-            else if(max2<arr[i])
+            else if(max2<=arr[i])
             max2 = arr[i];
         }
         System.out.print(max1+" "+max2);
