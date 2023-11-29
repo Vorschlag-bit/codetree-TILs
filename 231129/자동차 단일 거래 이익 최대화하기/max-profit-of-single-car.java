@@ -8,29 +8,28 @@ public class Main {
         int n = sc.nextInt();
 
         int[] arr = new int[1000];
+        int[] b = new int[1000];
 
         for(int i = 0; i<n; i++)
         arr[i] = sc.nextInt();
 
-        int min = Integer.MAX_VALUE; 
-        int max = 0; 
-        int minidx = 0;
+        int gap = -1;
 
         for(int i = 0; i<n; i++){
-            if(arr[i]<min){
-             min = arr[i];
-             max = arr[i];
-             minidx = i;
+            for(int j = 0; j<n; j++){
+                if(arr[j]>arr[i])
+                gap = arr[j] - arr[i];
             }
+            b[i] = gap; 
         }
-        for(int i = minidx; i<n; i++){
-            if(arr[i]>max)
-            max = arr[i];
+        int Maxgap = b[0];
+
+        for(int i = 0; i<b.length; i++){
+            if(b[i]>=Maxgap)
+            Maxgap = b[i];
         }
 
-        if(max==min)
-        System.out.print(0);
-        else
-        System.out.print(max-min);
+        if(gap == -1) System.out.print(0);
+        else System.out.print(Maxgap);
     }
 }
