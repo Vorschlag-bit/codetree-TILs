@@ -11,8 +11,8 @@ public class Main {
 
         int cnt = 0;
 
-        for(int i = 0; i<Arr.length; i++){
-            if(Arr[i]==str2.charAt(0))
+        for(int i = 0; i<str.length(); i++){
+            if(str.charAt(i)==str2.charAt(0))
             cnt++;
         }
         System.out.print(cnt);
