@@ -11,6 +11,8 @@ public class Main {
 
         String[] arr = new String[100];
 
+        String str1 = "";
+
         for (int i = 0; i < str.length() - 1; i++) {
             if (str.charAt(i) != str.charAt(i + 1)) {
                 arr[j] = String.valueOf(str.charAt(i));
@@ -29,10 +31,12 @@ public class Main {
         arr[j] = String.valueOf(cnt);
 
         // 결과 출력
-        System.out.println(j+1);
 
         for (int i = 0; i <= j; i++) {
-            System.out.print(arr[i]);
+             str1 = str1 + arr[i];
         }
+
+        System.out.println(str1.length());
+        System.out.println(str1);
     }
 }
