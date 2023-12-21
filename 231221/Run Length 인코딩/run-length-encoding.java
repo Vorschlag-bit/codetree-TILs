@@ -9,7 +9,7 @@ public class Main {
         int cnt = 1;  // 카운트 초기값을 1로 설정
         int j = 0;
 
-        String[] arr = new String[100];
+        String[] arr = new String[1000];
 
         String str1 = "";
 
