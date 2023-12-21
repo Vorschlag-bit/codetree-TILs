@@ -10,13 +10,13 @@ public class Main {
 
         int len = str.length();
 
-        for(int i = len-1; i>=len-n; i--){
             if(n>len){
                 for(int j = len-1; j>=0; j--)
                 System.out.print(str.charAt(j));
             }
             else
+            for(int i = len -1; i>=len-n; i--)
             System.out.print(str.charAt(i));
-        }
+        
     }
 }
