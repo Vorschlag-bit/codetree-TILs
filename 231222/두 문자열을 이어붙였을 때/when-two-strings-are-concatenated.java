@@ -11,15 +11,18 @@ public class Main {
         String d = b+a;
 
         boolean s = false;
+
         for(int i = 0; i<c.length(); i++){
-            if(c.charAt(i)!=d.charAt(i))
-            s = false;
+            if(c.charAt(i)!= d.charAt(i)){
+                s = false;
+                break;
+            }
             else s = true;
         }
 
-        if(s = true)
+        if(s == true)
         System.out.print("true");
-        else
+        else if(s == false)
         System.out.print("false");
 
     }
