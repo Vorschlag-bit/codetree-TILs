@@ -23,15 +23,11 @@ public class Main {
                 System.out.println(s);
             }
             else{
-                for(int k = 0; k<len; k++){
-                    arr[k] = String.valueOf(s.charAt(k));
-                }
-                s = "";
-                for(int j = len-1; j>=0; j--){
-                    s += arr[j];
-                }
-                System.out.println(s);
+                for(int j = 0; j<len; j++){
+                    s = s.substring(j,j+1) + s.substring(len-1-j, len-j);
             }
+            System.out.println(s);
         }
     }
+}
 }
