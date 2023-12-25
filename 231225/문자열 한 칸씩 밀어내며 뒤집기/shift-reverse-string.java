@@ -23,11 +23,8 @@ public class Main {
                 System.out.println(s);
             }
             else{
-                char[] arr1 = s.toCharArray();
-                s = "";
-                for(int j = len-1; j>=0; j--){
-                    s += arr1[j];
-                }
+                StringBuffer sb  = new StringBuffer(s);
+                s = sb.reverse().toString();
                 System.out.println(s);
             }
         }
