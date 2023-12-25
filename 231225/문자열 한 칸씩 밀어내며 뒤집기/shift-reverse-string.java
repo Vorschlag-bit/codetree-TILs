@@ -16,11 +16,9 @@ public class Main {
             int qa = sc.nextInt();
             if(qa == 1){
                 s = s.substring(1) + s.substring(0,1);
-                System.out.println(s); 
             }
             else if(qa == 2){
                 s = s.substring(len-1,len) + s.substring(0,len-1);
-                System.out.println(s);
             }
             else{
                 for(int j = 0; j<len; j++){
@@ -28,8 +26,8 @@ public class Main {
                     break;
                     s = s.substring(j,j+1) + s.substring(len-1-j, len-j);
             }
-            System.out.println(s);
         }
+        System.out.println(s);
     }
 }
 }
