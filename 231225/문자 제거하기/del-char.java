@@ -10,12 +10,13 @@ public class Main {
 
         while(len > 1){
             int n = sc.nextInt();
-            if(n>len)
-            s = s.substring(0,len-1);
-            else{
-            s = s.substring(0,n)+s.substring(n+1);
-            }
-            len = s.length();
+           
+           if(n >= len)
+           n = len - 1;
+
+           s = s.substring(0,n) + s.substring(n+1);
+           len--;
+
             System.out.println(s);
         }
     }
