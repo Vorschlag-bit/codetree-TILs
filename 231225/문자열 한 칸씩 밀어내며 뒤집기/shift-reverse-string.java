@@ -24,6 +24,8 @@ public class Main {
             }
             else{
                 for(int j = 0; j<len; j++){
+                    if(len==1)
+                    break;
                     s = s.substring(j,j+1) + s.substring(len-1-j, len-j);
             }
             System.out.println(s);
