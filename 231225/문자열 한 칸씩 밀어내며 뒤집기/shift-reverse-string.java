@@ -26,10 +26,11 @@ public class Main {
                 for(int k = 0; k<len; k++){
                     arr[k] = String.valueOf(s.charAt(k));
                 }
+                s = "";
                 for(int j = len-1; j>=0; j--){
-                    System.out.print(arr[j]);
+                    s += arr[j];
                 }
-                System.out.println();
+                System.out.println(s);
             }
         }
     }
