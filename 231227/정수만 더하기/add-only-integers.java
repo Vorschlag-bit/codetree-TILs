@@ -9,7 +9,7 @@ public class Main {
         int sum = 0;
 
         for(int i = 0; i<A.length(); i++){
-            if(A.charAt(i)>='0'&&A.charAt(i)<='9'){
+            if(Character.isDigit(A.charAt(i))){
                 sum += A.charAt(i)-48;
             }
         }
