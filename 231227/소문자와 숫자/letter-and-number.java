@@ -8,10 +8,12 @@ public class Main {
 
         int len = s.length();
 
-        s = s.toLowerCase();
-
         for(int i = 0; i<len; i++){
-            if(Character.isLetter(s.charAt(i)) || Character.isDigit(s.charAt(i)))
+            if(s.charAt(i)>='A'&&s.charAt(i)<='Z')
+            System.out.print((char)(s.charAt(i)+32));
+            else if(s.charAt(i)>='a'&&s.charAt(i)<='z')
+            System.out.print(s.charAt(i));
+            else if(s.charAt(i)>='0'&&s.charAt(i)<='9')
             System.out.print(s.charAt(i));
         }
     }
