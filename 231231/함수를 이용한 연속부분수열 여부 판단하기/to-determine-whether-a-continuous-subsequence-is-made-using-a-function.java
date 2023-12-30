@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static boolean check(int[] a, int[] b) {
         
-        for (int i = 0; i <= a.length; i++) {
+        for (int i = 0; i <= a.length-b.length; i++) {
             boolean check2 = true;
             for (int j = 0; j < b.length; j++) {
                 if (a[i + j] != b[j]) {
