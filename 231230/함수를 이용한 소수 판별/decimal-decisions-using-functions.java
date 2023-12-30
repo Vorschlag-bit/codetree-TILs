@@ -17,7 +17,7 @@ public class Main {
         int sum = 0;
 
         for(int i = a; i<=b; i++){
-            if(prime(i))
+            if(prime(i)&&i>1)
             sum += i;
         }
 
