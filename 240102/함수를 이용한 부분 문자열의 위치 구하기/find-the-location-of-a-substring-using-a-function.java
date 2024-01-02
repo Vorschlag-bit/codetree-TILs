@@ -6,7 +6,7 @@ public class Main {
         int a = str.length();
         int b = s.length();
 
-        if(startidx + b - 1 >= str)
+        if(startidx + b - 1 >= a)
         return false;
 
         for(int i = 0; i < b; i++){
