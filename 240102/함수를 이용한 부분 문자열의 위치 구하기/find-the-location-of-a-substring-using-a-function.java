@@ -1,14 +1,15 @@
 import java.util.*;
 public class Main {
     public static String str, s;
+
     public static boolean check(int startidx){
         int a = str.length();
         int b = s.length();
 
-        if(startidx + m - 1 >= str)
+        if(startidx + b - 1 >= str)
         return false;
 
-        for(int i = 0; i < m; i++){
+        for(int i = 0; i < b; i++){
         if(str.charAt(startidx + i) != s.charAt(i))
         return false;
     }
