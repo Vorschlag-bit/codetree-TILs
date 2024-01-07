@@ -23,13 +23,9 @@ public class Main {
         Arrays.sort(arr);
 
         for(int i = 0; i < n; i++){
-            cnt = 0;
-            for(int j = 0; j < len; j++){
-                if(t.charAt(j) == arr[i].charAt(j)){
-                cnt++;
-                }
-            }
-            if(cnt == len){
+            if(len > arr[i].length())
+            continue;
+            if(t.equals(arr[i].substring(0,len))){
                 arr1[cnt1] = arr[i];
                 cnt1++;
             }
