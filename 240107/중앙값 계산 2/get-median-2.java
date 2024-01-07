@@ -1,8 +1,9 @@
 import java.util.*;
 import java.util.Arrays;
 public class Main {
+    public static int cnt = 1;
     public static int Middle(int[] arr, int i){
-        Arrays.sort(arr);
+        Arrays.sort(arr, 1, cnt);
         if(i==1)
         return arr[1];
         
@@ -18,9 +19,7 @@ public class Main {
 
         for(int i = 1; i <= n; i++) {
             arr[i] = sc.nextInt();
-        }
-        
-        for(int i = 1; i <= n; i++) {
+            cnt++;
             if(i%2==1)
             System.out.print(Middle(arr, i)+" ");
         }
