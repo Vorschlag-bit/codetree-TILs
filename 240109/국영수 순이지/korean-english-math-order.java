@@ -39,10 +39,8 @@ public class Main {
                 return b.kor - a.kor;
                 else if(a.eng != b.eng)
                 return b.eng - a.eng;
-                else if(a.math != b.math)
+                
                 return b.math - a.math;
-
-                return 0;
             } 
         });
 
