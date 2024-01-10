@@ -6,7 +6,7 @@ class Student implements Comparable<Student> {
     int weight;
     int number;
 
-    public Student(int height, int weight) {
+    public Student(int height, int weight, int number) {
         this.height = height;
         this.weight = weight;
         this.number = number;
@@ -15,9 +15,11 @@ class Student implements Comparable<Student> {
     @Override
     public int compareTo(Student student) {
         if(this.height == student.height)
-        return student.weight - this.weight;
-        else if(this.weight == student.weight)
+        if(this.weight == student.weight)
         return this.number - student.number;
+        else  return student.weight - this.weight;
+
+        return student.height - this.height;
     }
 }
 public class Main {
@@ -27,19 +29,19 @@ public class Main {
 
         int n = sc.nextInt();
 
-        Student[] students = new Student[n+1];
+        Student[] students = new Student[n];
 
-        for(int i = 1; i <= n; i++) {
+        for(int i = 0; i < n; i++) {
             int height = sc.nextInt();
             int weight = sc.nextInt();
-            int number = i;
+            int number = (i+1);
 
             students[i] = new Student(height, weight, number);
         }
 
         Arrays.sort(students);
 
-        for(int i = 1; i <= n; i++) {
+        for(int i = 0; i < n; i++) {
             System.out.println(students[i].height+" "+students[i].weight+" "+students[i].number);
         }
     }
