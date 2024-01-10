@@ -4,9 +4,10 @@ import java.io.*;
 
 class Person implements Comparable<Person> {
     String name;
-    int height, weight;
+    int height; 
+    double weight;
 
-    public Person(String name, int height, int weight) {
+    public Person(String name, int height, double weight) {
         this.name = name;
         this.height = height;
         this.weight = weight;
@@ -26,13 +27,11 @@ public class Main {
 
         for(int i = 0; i < 5; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            persons[i] = new Person(st.nextToken(), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+            persons[i] = new Person(st.nextToken(), Integer.parseInt(st.nextToken()), Double.parseDouble(st.nextToken()));
         }
-        Arrays.sort(persons);
-
         Arrays.sort(persons, new Comparator<Person>() {
             @Override
-            public String compare(Person a, Person b) {
+            public int compare(Person a, Person b) {
                 return a.name.compareTo(b.name);
             }
         });
@@ -41,6 +40,10 @@ public class Main {
         for(int i = 0; i < 5; i++) {
             System.out.println(persons[i].name+" "+persons[i].height+" "+persons[i].weight);
         }
+        System.out.println();
+
+        Arrays.sort(persons);
+
         System.out.println("height");
         for(int i = 0; i < 5; i++) {
             System.out.println(persons[i].name+" "+persons[i].height+" "+persons[i].weight);
