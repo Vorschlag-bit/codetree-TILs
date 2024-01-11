@@ -15,7 +15,7 @@ public class Main {
 
         if(Cal(a, b, c) < 0)
         System.out.print(-1);
-
+        else
         System.out.print(Cal(a, b, c));
     }
 }
