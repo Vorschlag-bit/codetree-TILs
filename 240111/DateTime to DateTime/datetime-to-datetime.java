@@ -13,7 +13,7 @@ public class Main {
         int b = Integer.parseInt(st.nextToken());
         int c = Integer.parseInt(st.nextToken());
 
-        if(a < 11 || b < 11 || c < 11)
+        if(Cal(a, b, c) < 0)
         System.out.print(-1);
 
         System.out.print(Cal(a, b, c));
