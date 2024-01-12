@@ -8,7 +8,7 @@ public class Main {
     public static int Cal(int m, int d) {
         int total = 0;
 
-        for(int i = 1; i <= m; i++){
+        for(int i = 1; i < m; i++){
             total += days[i];
         }
 
