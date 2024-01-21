@@ -16,7 +16,7 @@ public class Main {
         }
 
         int cnt = 0;
-        int[] list = new int[10];
+        int[] list = new int[50];
 
         while(true) {
             if(num < b){
