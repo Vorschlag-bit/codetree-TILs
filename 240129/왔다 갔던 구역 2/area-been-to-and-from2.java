@@ -4,13 +4,13 @@ public class Main {
     public static int cnt = 0;
     public static int here = 1000;
     public static void Findout(int x, String b, int[] arr) {
-        if(b == "R"){
+        if(b.equals("R")){
             for(int i = here; i < here + x; i++) {
                 arr[i]++;
                 if(arr[i] == 2)
                 cnt++;
             }
-            here = x;
+            here += x;
         }
 
         else {
@@ -19,7 +19,7 @@ public class Main {
                 if(arr[i] == 2)
                 cnt++;
             }
-            here = here - x;
+            here -= x;
         }
         return;
     }
