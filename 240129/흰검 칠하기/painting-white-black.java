@@ -1,69 +1,50 @@
 import java.util.*;
 import java.io.*;
-
 public class Main {
-    public static int weiss = 0;
-    public static int dunkel = 0;
-    public static int grau = 0;
-    public static int start = 100000;
-
+    static int weiss = 0;
+    static int dunkel = 0;
+    static int grau = 0;
+    static int start = 100000;
+    static char[] directions = new char[200001]; //검은색, 흰색을 저장할 배열.
     public static void Findout(int x, String dir, int[] arr) {
-        if (dir.equals("R")) {
-            for (int i = start; i < start + x; i++) {
+        if(dir.equals("R")){
+            for(int i = start; i < start + x; i++) {
                 arr[i]++;
-                // 수정: arr[i]가 4보다 크면 더 진행하지 않고 다음 반복으로 넘어갑니다.
-                if (arr[i] > 4) {
-                    continue;
-                }
-                if (arr[i] == 4) {
+                if(arr[i] > 4)
+                continue;
+                if(arr[i] == 4) {
                     grau++;
-                    // 수정: grau를 증가시키면서 weiss를 감소시킵니다.
-                    weiss--;
+                    directions[i] = 'g';
                     continue;
                 }
-                if (arr[i] > 1) {
-                    dunkel++;
-                    // 수정: dunkel을 증가시키면서 weiss를 감소시킵니다.
-                    weiss--;
-                    continue;
-                }
-                dunkel++;
+                directions[i] = 'b';
             }
-            // 수정: start를 x만큼 증가시킵니다.
             start += (x - 1);
-        } else {
-            for (int i = start; i > start - x; i--) {
+        }
+        else{
+            for(int i = start; i > start - x; i--) {
                 arr[i]++;
-                // 수정: arr[i]가 4보다 크면 더 진행하지 않고 다음 반복으로 넘어갑니다.
-                if (arr[i] > 4) {
-                    continue;
-                } else if (arr[i] == 4) {
-                    grau++;
-                    // 수정: grau를 증가시키면서 dunkel을 감소시킵니다.
-                    dunkel--;
+                if(arr[i] > 4)
+                continue;
+                else if(arr[i] == 4) {
+                     grau++;
+                     directions[i] = 'g';
                     continue;
                 }
-                if (arr[i] > 1) {
-                    weiss++;
-                    // 수정: weiss를 증가시키면서 dunkel을 감소시킵니다.
-                    dunkel--;
-                    continue;
-                }
-                weiss++;
+                directions[i] = 'w';
             }
-            // 수정: start를 x만큼 감소시킵니다.
-            start -= (x - 1);
+                start -= (x - 1);
         }
     }
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)throws IOException {
+        // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
 
-        int[] arr = new int[200001];
+        int[] arr = new int[200001];//각 타일이 총 몇 번 칠해지는 표시할 배열.
 
-        for (int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
 
             int x = Integer.parseInt(st.nextToken());
@@ -71,7 +52,12 @@ public class Main {
 
             Findout(x, dir, arr);
         }
-
+        for(int i=0; i<directions.length; i++){
+            if (directions[i] == 'w')
+                weiss++;
+            else if(directions[i] == 'b')
+                dunkel++;
+        }
         System.out.printf("%d %d %d", weiss, dunkel, grau);
     }
 }
