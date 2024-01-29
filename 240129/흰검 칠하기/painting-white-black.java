@@ -6,18 +6,21 @@ public class Main {
     static int grau = 0;
     static int start = 100000;
     static char[] directions = new char[200001]; //검은색, 흰색을 저장할 배열.
+    static int[] dunkelcnt = new int[200001];
+    static int[] weisscnt = new int[200001];
     public static void Findout(int x, String dir, int[] arr) {
         if(dir.equals("R")){
             for(int i = start; i < start + x; i++) {
                 arr[i]++;
                 if(arr[i] > 4)
                 continue;
-                if(arr[i] == 4) {
+                if(arr[i] == 4&&weisscnt[i] == 2) {
                     grau++;
                     directions[i] = 'g';
                     continue;
                 }
                 directions[i] = 'b';
+                dunkelcnt[i]++;
             }
             start += (x - 1);
         }
@@ -26,12 +29,13 @@ public class Main {
                 arr[i]++;
                 if(arr[i] > 4)
                 continue;
-                else if(arr[i] == 4) {
+                else if(arr[i] == 4&&dunkelcnt[i] == 2) {
                      grau++;
                      directions[i] = 'g';
                     continue;
                 }
                 directions[i] = 'w';
+                weisscnt[i]++;
             }
                 start -= (x - 1);
         }
