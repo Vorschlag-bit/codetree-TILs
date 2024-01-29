@@ -12,7 +12,9 @@ public class Main {
         if(dir.equals("R")){
             for(int i = start; i < start + x; i++) {
                 arr[i]++;
-                if(arr[i] >= 4&&whitecnt[i] == 2) {
+                if(arr[i] > 4&&directions[i] == 'g')
+                continue;
+                else if(arr[i] >= 4&&whitecnt[i] == 2) {
                     gray++;
                     directions[i] = 'g';
                     continue;
@@ -25,7 +27,9 @@ public class Main {
         else{
             for(int i = start; i > start - x; i--) {
                 arr[i]++;
-                if(arr[i] >= 4&&blackcnt[i] == 2) {
+                if(arr[i] > 4&&directions[i] == 'g')
+                continue;
+                else if(arr[i] >= 4&&blackcnt[i] == 2) {
                      gray++;
                      directions[i] = 'g';
                     continue;
