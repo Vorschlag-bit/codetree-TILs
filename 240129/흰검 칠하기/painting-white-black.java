@@ -1,26 +1,26 @@
 import java.util.*;
 import java.io.*;
 public class Main {
-    static int weiss = 0;
-    static int dunkel = 0;
-    static int grau = 0;
+    static int white = 0;
+    static int black = 0;
+    static int gray = 0;
     static int start = 100000;
     static char[] directions = new char[200001]; //검은색, 흰색을 저장할 배열.
-    static int[] dunkelcnt = new int[200001];
-    static int[] weisscnt = new int[200001];
+    static int[] blackcnt = new int[200001];
+    static int[] whitecnt = new int[200001];
     public static void Findout(int x, String dir, int[] arr) {
         if(dir.equals("R")){
             for(int i = start; i < start + x; i++) {
                 arr[i]++;
                 if(arr[i] > 4)
                 continue;
-                if(arr[i] == 4&&weisscnt[i] == 2) {
-                    grau++;
+                if(arr[i] == 4&&whitecnt[i] == 2) {
+                    gray++;
                     directions[i] = 'g';
                     continue;
                 }
                 directions[i] = 'b';
-                dunkelcnt[i]++;
+                blackcnt[i]++;
             }
             start += (x - 1);
         }
@@ -29,13 +29,13 @@ public class Main {
                 arr[i]++;
                 if(arr[i] > 4)
                 continue;
-                else if(arr[i] == 4&&dunkelcnt[i] == 2) {
-                     grau++;
+                else if(arr[i] == 4&&blackcnt[i] == 2) {
+                     gray++;
                      directions[i] = 'g';
                     continue;
                 }
                 directions[i] = 'w';
-                weisscnt[i]++;
+                whitecnt[i]++;
             }
                 start -= (x - 1);
         }
@@ -58,10 +58,10 @@ public class Main {
         }
         for(int i=0; i<directions.length; i++){
             if (directions[i] == 'w')
-                weiss++;
+                white++;
             else if(directions[i] == 'b')
-                dunkel++;
+                black++;
         }
-        System.out.printf("%d %d %d", weiss, dunkel, grau);
+        System.out.printf("%d %d %d", white, black, gray);
     }
 }
