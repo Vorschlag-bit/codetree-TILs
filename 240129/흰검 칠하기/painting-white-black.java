@@ -14,7 +14,7 @@ public class Main {
                 arr[i]++;
                 if(arr[i] > 4&&directions[i] == 'g')
                 continue;
-                else if(arr[i] >= 4&&whitecnt[i] == 2) {
+                else if(arr[i] >= 4&&whitecnt[i] >= 2) {
                     gray++;
                     directions[i] = 'g';
                     continue;
@@ -29,7 +29,7 @@ public class Main {
                 arr[i]++;
                 if(arr[i] > 4&&directions[i] == 'g')
                 continue;
-                else if(arr[i] >= 4&&blackcnt[i] == 2) {
+                else if(arr[i] >= 4&&blackcnt[i] >= 2) {
                      gray++;
                      directions[i] = 'g';
                     continue;
