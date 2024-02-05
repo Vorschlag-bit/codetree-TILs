@@ -38,7 +38,8 @@ public class Main {
                 }
             }
         }
-    
+        if(minx == Max) System.out.print(0);
+        else
         System.out.print((maxx - minx +1)*(maxy - miny +1));
     }
 }
