@@ -18,16 +18,12 @@ public class Main {
             int a = Integer.parseInt(st.nextToken());
             arr[i] = a;
 
-            if(a > t) check = true;
-            else check = false;
-
-            if(check) {
+            if(a > t) {
                 cnt++;
                 ans = Math.max(ans, cnt);
             }
             else cnt = 0;
         }
-        if(ans == 1) System.out.print(0);
-        else System.out.print(ans);
+        System.out.print(ans);
     }
 }
