@@ -17,10 +17,11 @@ public class Main {
         }
 
         for(int i = 0; i < n; i++) {
-            if(i == 0 || arr[i] == arr[i-1])
-            cnt++;
-            else if(arr[i] != arr[i - 1]) {
+            if(i == 0 || arr[i] == arr[i-1]) {
+                cnt++;
                 if(cnt > Max) Max = cnt;
+            }
+            else if(arr[i] != arr[i - 1]) {
                 cnt = 1;
             }
         }
