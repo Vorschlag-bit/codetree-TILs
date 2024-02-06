@@ -13,22 +13,18 @@ public class Main {
         int[] arr = new int[n];
 
          st = new StringTokenizer(br.readLine()); // 새로운 입력을 읽기 위해 StringTokenizer를 초기화
-
+        boolean check = false;
         for(int i = 0; i < n; i++) {
             int a = Integer.parseInt(st.nextToken());
-
             arr[i] = a;
 
-            if(i == 0&&arr[i] > t)
-            cnt = 1;
-            else if(i == 0&&arr[i] < t) cnt = 0;
+            if(a > t) check = true;
 
-            if((arr[i] > t)&&(arr[i] > arr[i - 1]))
-            cnt++;
-            else
-            cnt = 0;
-
-            ans = Math.max(ans, cnt);
+            if(check) {
+                cnt++;
+                ans = Math.max(ans, cnt);
+            }
+            else cnt = 0;
         }
         if(ans == 1) System.out.print(0);
         else System.out.print(ans);
