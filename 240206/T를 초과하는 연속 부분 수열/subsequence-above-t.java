@@ -19,6 +19,7 @@ public class Main {
             arr[i] = a;
 
             if(a > t) check = true;
+            else check = false;
 
             if(check) {
                 cnt++;
