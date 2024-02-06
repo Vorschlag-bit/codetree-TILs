@@ -12,8 +12,7 @@ public class Main {
         int ans = 0;
         int[] arr = new int[n];
 
-         st = new StringTokenizer(br.readLine()); // 새로운 입력을 읽기 위해 StringTokenizer를 초기화
-        boolean check = false;
+        st = new StringTokenizer(br.readLine()); // 새로운 입력을 읽기 위해 StringTokenizer를 초기화
         for(int i = 0; i < n; i++) {
             int a = Integer.parseInt(st.nextToken());
             arr[i] = a;
