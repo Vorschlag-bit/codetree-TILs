@@ -19,7 +19,11 @@ public class Main {
 
             arr[i] = a;
 
-            if(i != 0&&(arr[i] > t)&&(arr[i] > arr[i - 1]))
+            if(i == 0&&arr[i] > t)
+            cnt = 1;
+            else if(i == 0&&arr[i] < t) cnt = 0;
+
+            if((arr[i] > t)&&(arr[i] > arr[i - 1]))
             cnt++;
             else
             cnt = 0;
