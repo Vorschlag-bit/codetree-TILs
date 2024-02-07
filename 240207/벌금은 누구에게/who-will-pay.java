@@ -19,7 +19,10 @@ public class Main {
             int num = Integer.parseInt(st.nextToken());
             Student[num]++;
 
-            if(Student[num] == k) ans = num;
+            if(Student[num] == k) {
+                ans = num;
+                break;
+            }
         }
 
         System.out.print(ans == 0 ? -1 : ans);
