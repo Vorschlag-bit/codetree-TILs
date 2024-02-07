@@ -12,8 +12,8 @@ public class Main {
         String winner = "Mee";
         int time = 1;
 
-        int[] a = new int[1000001];
-        int[] b = new int[1000001];
+        int[] a = new int[10000001];
+        int[] b = new int[10000001];
 
         int aT = 0;
         int bT = 0;
