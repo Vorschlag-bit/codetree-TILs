@@ -9,8 +9,8 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int[] A = new int[1000001];
-        int[] B = new int[1000001];
+        int[] A = new int[1000005];
+        int[] B = new int[1000005];
         int cnt = 0;
 
         int atime = 0;
