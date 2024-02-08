@@ -38,12 +38,21 @@ public class Main {
                 btime++;
             }
         }
-        //배열 순회가 끝난 후, 위치 고정을 위한 변수.
+        //배열 순회가 끝난 후, 위치 고정을 위한 반복문.
         int Rt = Math.max(atime, btime);
+        for(int i = atime; i <= Rt; i++){
+            A[atime + 1] = A[atime];
+            atime++; 
+        }
+        for(int i = atime; i <= Rt; i++){
+            B[btime + 1] = B[btime];
+            btime++; 
+        }
 
         for(int i = 1; i <= Rt; i++) {
             if(A[i-1] != B[i-1])
-            if(A[i] == B[i]) cnt++;
+            if(A[i] == B[i]) 
+            cnt++;
         }
         System.out.print(cnt);
     }
