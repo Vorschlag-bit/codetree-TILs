@@ -1,58 +1,63 @@
 import java.util.*;
-import java.io.*;
+
 public class Main {
-    public static void main(String[] args)throws IOException {
-        // 여기에 코드를 작성해주세요.
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+    public static final int distance = 1000001;
+    
+    public static int goFnc (char direction, int time){
+        switch(direction){
+            case 'L' :
+                return time * -1;
+            case 'R' :
+                return time;
+            default :
+                return 0;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(), M = sc.nextInt(), A_idx = 1, B_idx = 1;
+        double[] arrA = new double[distance], arrB = new double[distance];
+        for(int i = 0 ; i < N ; i++){
+            int time = sc.nextInt();
+            char direction = sc.next().charAt(0); 
+            for(int j = 0 ; j < time ; j++){
+                arrA[A_idx] = arrA[A_idx-1] + goFnc(direction, 1);
+                A_idx++;
+            }
+        }
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        for(int i = 0 ; i < M ; i++){
+            int time = sc.nextInt();
+            char direction = sc.next().charAt(0);
+            for(int j = 0 ; j < time ; j++){
+                arrB[B_idx] = arrB[B_idx-1] + goFnc(direction, 1);
+                B_idx++;
+            }
+        }
 
-        int[] A = new int[1000001];
-        int[] B = new int[1000001];
+        int maxCnt = Math.max(A_idx, B_idx);
+        int minCnt = Math.min(A_idx, B_idx);
+
+        if(maxCnt == A_idx){
+            Arrays.fill(arrB, minCnt, maxCnt, arrB[minCnt-1]);
+        }
+        else{
+            Arrays.fill(arrA, minCnt, maxCnt, arrA[minCnt-1]);
+        }
+        
+        boolean triger = true;
         int cnt = 0;
-
-        int atime = 0;
-        int btime = 0;
-
-        for(int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
-
-            int t = Integer.parseInt(st.nextToken());
-            int d = st.nextToken().equals("R") ? 1 : -1;
-
-            for(int j = 0; j < t; j++) {
-                A[atime+1] = A[atime] + 1 * d;
-                atime++;
+        for(int i = 1 ; i < maxCnt ; i++){
+            if(arrA[i] == arrB[i]){
+                if(triger){
+                    cnt++;
+                    triger = false;
+                }
             }
-        }
-        for(int i = 0; i < m; i++) {
-            st = new StringTokenizer(br.readLine());
-
-            int t = Integer.parseInt(st.nextToken());
-            int d = st.nextToken().equals("R") ? 1 : -1;
-
-            for(int j = 0; j < t; j++) {
-                B[btime+1] = B[btime] + 1 * d;
-                btime++;
+            else{
+                triger = true;
             }
-        }
-        //배열 순회가 끝난 후, 위치 고정을 위한 반복문.
-        int Rt = Math.max(atime, btime);
-        for(int i = atime; i <= Rt; i++){
-            A[atime + 1] = A[atime];
-            atime++; 
-        }
-        for(int i = atime; i <= Rt; i++){
-            B[btime + 1] = B[btime];
-            btime++; 
-        }
 
-        for(int i = 1; i <= Rt; i++) {
-            if(A[i-1] != B[i-1])
-            if(A[i] == B[i]) 
-            cnt++;
         }
         System.out.print(cnt);
     }
