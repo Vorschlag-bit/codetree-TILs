@@ -47,7 +47,7 @@ public class Main {
             }
         }
 
-        for(int i = 1; i <= time; i++) {
+        for(int i = 1; i <= aT; i++) {
             if(a[i] > b[i]) {
                 if(winner != 0) cnt++;
                 winner = 0;
@@ -62,6 +62,6 @@ public class Main {
             }
         }
 
-        System.out.print(cnt - 1);
+        System.out.print(cnt);
     }
 }
