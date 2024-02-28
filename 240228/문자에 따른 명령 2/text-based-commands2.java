@@ -16,25 +16,16 @@ public class Main {
         int dirNum = 3;
 
         for(int i = 0; i < com.length(); i++) {
-            char dir = com.charAt(index);
+            char dir = com.charAt(i);
 
-            if(dir == 'R') {
-                dirNum = (dirNum + 1) % 4;
-            }
-            else if(dir == 'L') {
-                if(dirNum == 0) {
-                    dirNum = (dirNum - 1 + 4) % 4;
-                }
-                else {
-                    dirNum = (dirNum - 1) % 4;
-                }
-            }
+            if(dir == 'R') 
+            dirNum = (dirNum + 1) % 4;
+            else if(dir == 'L') 
+            dirNum = (dirNum - 1 + 4) % 4;
             else {
                 x += dx[dirNum];
                 y += dy[dirNum];
             }
-
-            index++;
         }
         System.out.print(x + " " + y);
     }
