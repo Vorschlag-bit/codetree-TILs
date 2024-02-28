@@ -4,7 +4,7 @@ public class Main {
     static int n;
 
     static boolean inRange(int x, int y) {
-        return (x > 0 && x < n&&y > 0&&y < n);
+        return (0 < x && x <= n && 0 < y &&y <= n);
     }
 
     static int Dir(char d) {
