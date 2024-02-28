@@ -13,9 +13,9 @@ public class Main {
         else if(d == 'L')
         return 3;
         else if(d == 'U')
-        return 1;
-        else
         return 2;
+        else
+        return 1;
     }
     public static void main(String[] args)throws IOException {
         // 여기에 코드를 작성해주세요.
