@@ -42,10 +42,10 @@ public class Main {
             char c = sen.charAt(i);
             //방향 설정 및 진행
             Dir(c);
-             
             boolean check = Check(x, y);
+            if(check) break;
         }
 
-        System.out.print(ans);
+        System.out.println(ans);
     }
 }
