@@ -1,55 +1,42 @@
-import java.util.*;
-import java.io.*;
-public class Main {
-    static boolean inRange(int nx, int ny, int n) {
-        return 0 <= nx && nx < n && 0 <= ny && ny < n;
-    }
-    public static void main(String[] args)throws IOException {
-        // 여기에 코드를 작성해주세요.
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        int[][] arr = new int[n + 1][n + 1];
-
+        // 배열 크기를 입력값에 따라 동적으로 할당
+        int[][] arr = new int[n][n];
         int[] dx = new int[] {0, -1, 0, 1};
         int[] dy = new int[] {1, 0, -1, 0};
-        //배열 시작점설정
+
         int dir = 0;
-        int x = n/2;
-        int y = n/2;
+        int x = n / 2;
+        int y = n / 2;
         arr[x][y] = 1;
-        //2번마다 채워야할 숫자.
-        int cnt = 1;
-        int temp = 2;
+
+        int cnt = 1; //짝수 번만큼 입력해야하는 횟수
+        int temp = 2; //채울 숫자
         int goal = n * n;
 
-        while(temp <= goal) {
-            //방향전환 횟수 카운팅 변수.
-            int dirC = 0;
-            while(dirC < 2) {
+        while (temp <= goal) { // goal까지 채워야 하므로 조건을 수정합니다.
             int num = cnt;
-            //num만큼 1씩 증가하는 숫자 채우기 위한 while문
-            while(num-- > 0 && temp <= goal) {
-            //범위 확인 후 숫자 채우기
-            int nx = x + dx[dir];
-            int ny = y + dy[dir];
-            if(inRange(nx, ny, n)) {
+            while (num-- > 0 && temp <= goal) { // 현재 방향으로 num만큼 채우되, goal을 넘어가면 종료합니다.
                 x += dx[dir];
                 y += dy[dir];
                 arr[x][y] = temp;
                 temp++;
             }
-            }
-            //채웠으면 회전
             dir = (dir + 1) % 4;
-            dirC++;
-            }
-            cnt++;
+            if (dir % 2 == 0) // 짝수 번 방향으로 이동했을 때만 숫자 개수를 증가시킵니다.
+                cnt++;
         }
-        //정답
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
+
+        // 배열 출력
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 System.out.print(arr[i][j] + " ");
             }
             System.out.println();
