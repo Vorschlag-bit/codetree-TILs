@@ -1,16 +1,15 @@
 import java.util.*;
 import java.io.*;
 public class Main {
-    static int dir;
     // /를 만날 때 방향 변화
     static int decision1(int dir) {
-        if(dir == '0') {
+        if(dir == 0){
             dir = 1;
         }
-        else if(dir == '1'){
+        else if(dir == 1){
             dir = 0;
         }
-        else if(dir == '2'){
+        else if(dir == 2){
             dir = 3;
         }
         else 
@@ -20,13 +19,13 @@ public class Main {
     }
     // \를 만날 때 방향 변화
     static int decision2(int dir) {
-        if(dir == '0'){
+        if(dir == 0){
             dir = 3;
         }
-        else if(dir == '1'){
+        else if(dir == 1){
             dir = 2;
         }
-        else if(dir == '2'){
+        else if(dir == 2){
             dir = 1;
         }
         else 
@@ -35,8 +34,8 @@ public class Main {
         return dir;
     }
     //마지막으로 튕겨 나오는지 확인
-    static boolean Check(int nx, int ny, int n) {
-        return 0 <= nx && nx < n && 0 <= ny && ny < n;
+    static boolean Check(int i, int j, int n) {
+        return 0 <= i && i < n && 0 <= j && j < n;
     }
     public static void main(String[] args)throws IOException {
         // 여기에 코드를 작성해주세요.
@@ -62,6 +61,7 @@ public class Main {
         int k = Integer.parseInt(br.readLine());
         int i;
         int j;
+        int dir;
         //k의 범위에 따른 레이저 들어오는 방향 설정 및 시작 위치 설정
         if(1 <= k && k <= n){
             dir = 0;
