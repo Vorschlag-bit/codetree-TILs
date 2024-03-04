@@ -14,7 +14,6 @@ public class Main {
         int ans = 0;
         boolean check = false;
 
-        if(n == 1) check = true;
 
         for(int i = 0; i < n; i++) {
             int num = (str.charAt(i) - '0');
@@ -24,13 +23,13 @@ public class Main {
         for(int i = 1; i < n; i++) {
             if(arr[i] == 0) {
                 arr[i] = 1;
+                check = true;
                 break;
             }
         }
 
-        if(check) {
-            System.out.print(0);
-            return;
+        if(!check) {
+            arr[n - 1] = 0;
         }
 
         for(int i = 0; i < n; i++) {
