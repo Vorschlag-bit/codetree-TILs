@@ -29,8 +29,8 @@ public class Main {
         }
 
         if(check) {
-            System.out.print(0);
-            System.exit(0);
+            System.out.print(1);
+            return;
         }
 
         for(int i = 0; i < n; i++) {
