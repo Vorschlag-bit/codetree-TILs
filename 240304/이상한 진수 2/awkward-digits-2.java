@@ -14,11 +14,11 @@ public class Main {
         int ans = 0;
         boolean check = false;
 
+        if(n == 1) check = true;
+
         for(int i = 0; i < n; i++) {
             int num = (str.charAt(i) - '0');
             arr[i] = num;
-            if(arr[0] == 0)
-            check = true;
         }
 
         for(int i = 1; i < n; i++) {
@@ -29,7 +29,7 @@ public class Main {
         }
 
         if(check) {
-            System.out.print(1);
+            System.out.print(0);
             return;
         }
 
