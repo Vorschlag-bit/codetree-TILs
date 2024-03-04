@@ -11,9 +11,14 @@ public class Main {
 
         int[] arr = new int[n];
 
+        int ans = 0;
+        boolean check = false;
+
         for(int i = 0; i < n; i++) {
             int num = (str.charAt(i) - '0');
             arr[i] = num;
+            if(arr[0] == 0)
+            check = true;
         }
 
         for(int i = 1; i < n; i++) {
@@ -22,7 +27,11 @@ public class Main {
                 break;
             }
         }
-        int ans = 0;
+
+        if(check) {
+            System.out.print(0);
+            System.exit(0);
+        }
 
         for(int i = 0; i < n; i++) {
             ans = ans * 2 + arr[i];
