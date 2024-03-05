@@ -48,7 +48,7 @@ public class Main {
                     figure3[4] = (Pick3/10000) % 10;
                     for(int l = 0; l < 5; l++) {
                         //Carry 찾아낼 반복문.
-                        if(figure1[l] + figure2[l] + figure3[l] >= 10) {
+                        if(figure1[l] + figure2[l] + figure3[l] > 10) {
                             Carry = false;
                             break;
                         }
