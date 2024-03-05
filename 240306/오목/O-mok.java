@@ -8,72 +8,72 @@ public class Main {
         int cnt = 1;
         boolean vic = false;
         // 가로 방향 체크.
-        for(int i = y + 1; i < 19; i++) {
+        for(int i = y + 1; i < 19 - y; i++) {
             if(cnt == 5) {
                 ansX = x + 1;
                 ansY = i - 2;
+                vic = true;
                 break;
             }
             if(arr[x][i] == 1) {
-                vic = true;
                 cnt++;
             }
             else {
-                vic = false;
                 cnt = 1;
                 break;
             }
         }
         if(vic) return true;
         //세로 방향 체크
-        for(int i = x + 1; i < 19; i++) {
+        for(int i = x + 1; i < 19 - x; i++) {
             if(cnt == 5) {
                 ansX = i - 2;
                 ansY = y + 1;
+                vic = true;
                 break;
             }
             if(arr[i][y] == 1) {
-                vic = true;
                 cnt++;
             }
             else {
-                vic = false;
                 cnt = 1;
                 break;
             }
         }
         if(vic) return true;
         //대각선 방향 체크1
-        for(int i = 1; i < 19; i++) {
+        for(int i = 1; i < 6; i++) {
+            if (x + i >= 19 || y + i >= 19) // 보드 범위를 초과하면 중지
+            break;
             if(cnt == 5) {
                 ansX = x + 3;
                 ansY = y + 3;
+                vic = true;
                 break;
             }
             if(arr[x + i][y + i] == 1) {
-                vic = true;
                 cnt++;
             }
             else {
-                vic = false;
                 cnt = 1;
                 break;
             }
         }
         if(vic) return true;
         //대각선 방향 체크2
-        for(int i = 1; i < 19; i++) {
+        for(int i = 1; i < 6; i++) {
+            if (x + i >= 19 || y - i < 0) // 보드 범위를 초과하면 중지
+            break;
             if(cnt == 5) {
                 ansX = x + 3;
                 ansY = y - 1;
+                vic = true;
                 break;
             }
             if(arr[x + i][y - i] == 2) {
-                vic = true;
                 cnt++;
             }
             else {
-                vic = false;
                 cnt = 1;
                 break;
             }
@@ -86,61 +86,62 @@ public class Main {
         int cnt = 1;
         boolean vic2 = false;
         // 가로 방향 체크.
-        for(int i = y + 1; i < 19; i++) {
+        for(int i = y + 1; i < 19 - y; i++) {
             if(cnt == 5) {
                 ansX = x + 1;
                 ansY = i - 2;
+                vic2 = true;
                 break;
             }
             if(arr[x][i] == 2) {
-                vic2 = true;
                 cnt++;
             }
             else {
-                vic2 = false;
                 cnt = 1;
                 break;
             }
         }
         if(vic2) return true;
         //세로 방향 체크
-        for(int i = x + 1; i < 19; i++) {
+        for(int i = x + 1; i < 19 - x; i++) {
             if(cnt == 5) {
                 ansX = i - 2;
                 ansY = y + 1;
+                vic2 = true;
                 break;
             }
             if(arr[i][y] == 2) {
-                vic2 = true;
                 cnt++;
             }
             else {
-                vic2 = false;
                 cnt = 1;
                 break;
             }
         }
         if(vic2) return true;
         //대각선 방향 체크1
-        for(int i = 1; i < 19; i++) {
+        for(int i = 1; i < 6; i++) {
+            if (x + i >= 19 || y + i >= 19) // 보드 범위를 초과하면 중지
+            break;
             if(cnt == 5) {
                 ansX = x + 3;
                 ansY = y + 3;
+                vic2 = true;
                 break;
             }
             if(arr[x + i][y + i] == 2) {
-                vic2 = true;
                 cnt++;
             }
             else {
-                vic2 = false;
                 cnt = 1;
                 break;
             }
         }
         if(vic2) return true;
         //대각선 방향 체크2
-        for(int i = 1; i < 19; i++) {
+        for(int i = 1; i < 6; i++) {
+            if (x + i >= 19 || y - i < 0) // 보드 범위를 초과하면 중지
+            break;
             if(cnt == 5) {
                 ansX = x + 3;
                 ansY = y - 1;
