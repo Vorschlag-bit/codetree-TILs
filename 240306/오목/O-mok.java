@@ -10,7 +10,7 @@ public class Main {
         // 가로 방향 체크.
         for(int i = y + 1; i < 19; i++) {
             if(cnt == 5) {
-                ansX = x;
+                ansX = x + 1;
                 ansY = i - 2;
                 break;
             }
@@ -24,11 +24,12 @@ public class Main {
                 break;
             }
         }
+        if(vic) return true;
         //세로 방향 체크
         for(int i = x + 1; i < 19; i++) {
             if(cnt == 5) {
                 ansX = i - 2;
-                ansY = y;
+                ansY = y + 1;
                 break;
             }
             if(arr[i][y] == 1) {
@@ -41,6 +42,7 @@ public class Main {
                 break;
             }
         }
+        if(vic) return true;
         //대각선 방향 체크
         for(int i = 1; i < 19; i++) {
             if(cnt == 5) {
@@ -68,7 +70,7 @@ public class Main {
         // 가로 방향 체크.
         for(int i = y + 1; i < 19; i++) {
             if(cnt == 5) {
-                ansX = x;
+                ansX = x + 1;
                 ansY = i - 2;
                 break;
             }
@@ -82,11 +84,12 @@ public class Main {
                 break;
             }
         }
+        if(vic2) return true;
         //세로 방향 체크
         for(int i = x + 1; i < 19; i++) {
             if(cnt == 5) {
                 ansX = i - 2;
-                ansY = y;
+                ansY = y + 1;
                 break;
             }
             if(arr[i][y] == 2) {
@@ -99,6 +102,7 @@ public class Main {
                 break;
             }
         }
+        if(vic2) return true;
         //대각선 방향 체크
         for(int i = 1; i < 19; i++) {
             if(cnt == 5) {
@@ -150,7 +154,7 @@ public class Main {
        }
        if(ans != 0) {
         System.out.println(ans);
-        System.out.print(ansY + " " + ansX);
+        System.out.print(ansX + " " + ansY);
        }
        else System.out.print(ans);
     }
