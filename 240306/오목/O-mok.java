@@ -43,7 +43,7 @@ public class Main {
             }
         }
         if(vic) return true;
-        //대각선 방향 체크
+        //대각선 방향 체크1
         for(int i = 1; i < 19; i++) {
             if(cnt == 5) {
                 ansX = x + 3;
@@ -51,6 +51,24 @@ public class Main {
                 break;
             }
             if(arr[x + i][y + i] == 1) {
+                vic = true;
+                cnt++;
+            }
+            else {
+                vic = false;
+                cnt = 1;
+                break;
+            }
+        }
+        if(vic) return true;
+        //대각선 방향 체크2
+        for(int i = 1; i < 19; i++) {
+            if(cnt == 5) {
+                ansX = x + 3;
+                ansY = y - 1;
+                break;
+            }
+            if(arr[x + i][y - i] == 2) {
                 vic = true;
                 cnt++;
             }
@@ -103,7 +121,7 @@ public class Main {
             }
         }
         if(vic2) return true;
-        //대각선 방향 체크
+        //대각선 방향 체크1
         for(int i = 1; i < 19; i++) {
             if(cnt == 5) {
                 ansX = x + 3;
@@ -111,6 +129,24 @@ public class Main {
                 break;
             }
             if(arr[x + i][y + i] == 2) {
+                vic2 = true;
+                cnt++;
+            }
+            else {
+                vic2 = false;
+                cnt = 1;
+                break;
+            }
+        }
+        if(vic2) return true;
+        //대각선 방향 체크2
+        for(int i = 1; i < 19; i++) {
+            if(cnt == 5) {
+                ansX = x + 3;
+                ansY = y - 1;
+                break;
+            }
+            if(arr[x + i][y - i] == 2) {
                 vic2 = true;
                 cnt++;
             }
