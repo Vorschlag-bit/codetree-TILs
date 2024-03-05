@@ -44,8 +44,8 @@ public class Main {
         //대각선 방향 체크
         for(int i = 1; i < 19; i++) {
             if(cnt == 5) {
-                ansX = x + 2;
-                ansY = y + 2;
+                ansX = x + 3;
+                ansY = y + 3;
                 break;
             }
             if(arr[x + i][y + i] == 1) {
@@ -102,8 +102,8 @@ public class Main {
         //대각선 방향 체크
         for(int i = 1; i < 19; i++) {
             if(cnt == 5) {
-                ansX = x + 2;
-                ansY = y + 2;
+                ansX = x + 3;
+                ansY = y + 3;
                 break;
             }
             if(arr[x + i][y + i] == 2) {
