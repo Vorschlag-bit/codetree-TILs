@@ -18,17 +18,17 @@ public class Main {
         }
         int Min = 10000;
 
+        int sum = 0;
+        for(int k = 0; k < n; k++) {
+            sum += arr[k];
+        }
+
         for(int i = 0; i < n; i++) {
             //첫번째 숫자 고를 반복문.
             for(int j = i + 1; j < n; j++) {
                 //두 번째 숫자 고를 반복문.
-                int sum = 0;
-                for(int k = 0; k < n; k++) {
-                    sum += arr[k];
-                }
-                sum -= arr[i];
-                sum -= arr[j];
-                Min = Math.min(Min, Math.abs(sum - s));
+                int diff = sum - arr[i] - arr[j];
+                Min = Math.min(Min, Math.abs(diff - s));
             }
         }
         System.out.print(Min);
