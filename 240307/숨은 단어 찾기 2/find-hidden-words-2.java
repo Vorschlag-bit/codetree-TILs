@@ -33,21 +33,18 @@ public class Main {
         //완전탐색 시작
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                if(arr[i][j] == 'L') {
-                    nx = i; // 전역 변수로 갱신
-                    ny = j; // 전역 변수로 갱신
+                if(arr[i][j] != 'L') continue;
                     for(int dir = 0; dir < 8; dir++) {
                         boolean Check = true;
                         for(int k = 1; k <= 2; k++) {
-                            int x = nx + dx[dir] * k;
-                            int y = ny + dy[dir] * k;
+                            int x = i + dx[dir] * k;
+                            int y = j + dy[dir] * k;
                             Check &= (inRange(x, y) && arr[x][y] == 'E');
                         }
                         if(Check) {
                             cnt++;
                         }
                     }
-                }
             }
         }
         System.out.print(cnt);
