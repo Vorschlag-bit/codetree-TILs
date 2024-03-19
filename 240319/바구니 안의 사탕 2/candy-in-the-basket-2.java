@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 public class Main {
-    static final int R = 100;
+    static final int R = 400;
     public static void main(String[] args)throws IOException {
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +21,7 @@ public class Main {
             arr[pos] += candy;
         }
         int Max = 0;
-        for(int i = k; i < R; i++) {//중심점 찾는 반복문.
+        for(int i = k; i < R + 1; i++) {//중심점 찾는 반복문.
             int sum = 0;
             for(int j = i - k; j <= i + k; j++) {
                 if(j > R) break;
