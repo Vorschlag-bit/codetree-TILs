@@ -13,8 +13,6 @@ public class Main {
         int[] arr2 = new int[m];
         int[] tmp = new int[m];
 
-        Arrays.sort(arr2, 0, m);
-
         st = new StringTokenizer(br.readLine());
         for(int i = 0; i < n; i++) {
             arr1[i] = Integer.parseInt(st.nextToken());
@@ -23,6 +21,7 @@ public class Main {
         for(int i = 0; i < m; i++) {
             arr2[i] = Integer.parseInt(st.nextToken());
         }
+        Arrays.sort(arr2, 0, m);
 
         int ans = 0;
         for(int i = 0; i <= n - m; i++) {
