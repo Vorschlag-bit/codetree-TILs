@@ -1,48 +1,44 @@
 import java.io.*;
 import java.util.*;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)throws IOException {
+        // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int[] arr = new int[n];
-        int[] b = new int[m];
+        int[] arr1 = new int[n];
+        int[] arr2 = new int[m];
+        int[] tmp = new int[m];
+
+        Arrays.sort(arr2, 0, m);
 
         st = new StringTokenizer(br.readLine());
         for(int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            arr1[i] = Integer.parseInt(st.nextToken());
         }
         st = new StringTokenizer(br.readLine());
         for(int i = 0; i < m; i++) {
-            b[i] = Integer.parseInt(st.nextToken());
+            arr2[i] = Integer.parseInt(st.nextToken());
         }
 
-        int count = countBeautifulSubsequences(arr, b);
-        System.out.println(count);
-    }
+        int ans = 0;
+        for(int i = 0; i <= n - m; i++) {
+            for(int j = 0; j < m; j++)
+            tmp[j] = arr1[i + j]; //비교를 할 임의의 배열을 생성 후, arr1에서 m만큼씩 잘라서 넣기.
+            Arrays.sort(tmp, 0, m);
 
-    private static int countBeautifulSubsequences(int[] arr, int[] b) {
-        int count = 0;
-        for (int i = 0; i <= arr.length - b.length; i++) {
-            for (int j = 0; j <= arr.length - b.length; j++) {
-                if (isBeautiful(arr, b, i, j)) {
-                    count++;
+            boolean issame = true;
+            for(int j = 0; j < m; j++) {
+                if(tmp[j] != arr2[j]) {
+                    issame = false;
+                    break;
                 }
             }
+            if(issame) ans++;
         }
-        return count;
-    }
-
-    private static boolean isBeautiful(int[] arr, int[] b, int startA, int startB) {
-        for (int i = 0; i < b.length; i++) {
-            if (arr[startA + i] != b[(startB + i) % b.length]) {
-                return false;
-            }
-        }
-        return true;
+        System.out.println(ans);
     }
 }
