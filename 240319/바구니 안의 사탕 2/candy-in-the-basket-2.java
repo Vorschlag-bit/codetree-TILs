@@ -10,7 +10,7 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
 
-        int[] arr = new int[R];
+        int[] arr = new int[R + 1];
 
         for(int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -21,9 +21,10 @@ public class Main {
             arr[pos] += candy;
         }
         int Max = 0;
-        for(int i = k; i < R - k; i++) {//중심점 찾는 반복문.
+        for(int i = k; i < R; i++) {//중심점 찾는 반복문.
             int sum = 0;
             for(int j = i - k; j <= i + k; j++) {
+                if(j > R) break;
                 sum += arr[j];
             }
             Max = Math.max(sum, Max);
