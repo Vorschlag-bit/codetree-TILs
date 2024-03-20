@@ -20,7 +20,6 @@ public class Main {
         }
 
         int ans = 0;
-        int Max = 0;
 
         for(int i = 0; i <= 100; i++) {
             int Hcnt = 0, Gcnt = 0;
@@ -30,15 +29,17 @@ public class Main {
                     if(arr[j] == 1) Gcnt++;
                     else Hcnt++;
 
-                    if(Hcnt == Gcnt || (Hcnt != 0 && Gcnt == 0) || (Hcnt == 0 && Gcnt != 0)) {
-                        size = j - i;
-                        Max = Math.max(size, Max);
+                    if((Hcnt != 0 && Gcnt == 0) || (Hcnt == 0 && Gcnt != 0)) {
+                        size = Math.max(size, j - i);
                     }
+                    else if(Hcnt == Gcnt) 
+                    size = Math.max(size, j - i - 1);
                 }
+                else continue;
             }
             ans = Math.max(ans, size);
         }
         if(n == 1) System.out.println(0);
-        else System.out.println(ans - 1);
+        else System.out.println(ans);
     }
 }
