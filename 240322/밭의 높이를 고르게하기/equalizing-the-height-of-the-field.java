@@ -22,17 +22,7 @@ public class Main {
             for(int j = i + t - 1; j < n; j++) {
                 int cost = 0;
                 for(int k = i; k <= j; k++) {
-                    int a = arr[k];
-                    if(a > h)
-                    while(a > h) {
-                        a--;
-                        cost++;
-                    }
-                    else if (a < h)
-                    while(a < h) {
-                        a++;
-                        cost++;
-                    }
+                    cost += Math.abs(arr[k] - h);
                 }
                 ans = Math.min(cost, ans);
             }
