@@ -10,7 +10,7 @@ public class Main {
         for(int i = 0; i < 6; i++)
         arr[i] = Integer.parseInt(st.nextToken());
 
-        int Mindiff = 10000;
+        int Mindiff = Integer.MAX_VALUE;
 
         for(int i = 0; i < 6; i++)
         for(int j = i + 1; j < 6; j++) {
