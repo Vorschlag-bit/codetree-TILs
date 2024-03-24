@@ -15,7 +15,7 @@ public class Main {
         }
 
         int minddiff = Integer.MAX_VALUE;
-
+        boolean check = false;
         for(int i = 0; i < 5; i++)
         for(int j = i + 1; j < 5; j++) {
             int sum1 = arr[i] = arr[j];
@@ -35,9 +35,10 @@ public class Main {
                 int min = Math.min(sum1, Math.min(sum2, sum3));
 
                 minddiff = Math.min(minddiff, max - min);
+                check = true;
             }
         }
-        if(minddiff == Integer.MAX_VALUE) System.out.println(-1);
+        if(!check) System.out.println(-1);
         else System.out.println(minddiff);
     }
 }
