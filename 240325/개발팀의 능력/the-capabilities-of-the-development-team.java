@@ -18,7 +18,7 @@ public class Main {
         boolean check = false;
         for(int i = 0; i < 5; i++)
         for(int j = i + 1; j < 5; j++) {
-            int sum1 = arr[i] = arr[j];
+            int sum1 = arr[i] + arr[j];
             for(int a = 0; a < 5; a++){
                 if(a == i || a == j)
                 continue;
