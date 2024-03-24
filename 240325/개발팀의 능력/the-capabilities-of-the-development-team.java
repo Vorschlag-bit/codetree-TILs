@@ -19,12 +19,11 @@ public class Main {
         for(int i = 0; i < 5; i++)
         for(int j = i + 1; j < 5; j++) {
             int sum1 = arr[i] = arr[j];
-            for(int a = 0; a < 5; a++)
-            for(int b = a + 1; b < 5; b++) {
-                if(a == i || a == j || b == i || b == j)
+            for(int a = 0; a < 5; a++){
+                if(a == i || a == j)
                 continue;
 
-                int sum2 = arr[a] + arr[b];
+                int sum2 = arr[a];
                 int sum3 = total;
                 sum3 -= (sum2 + sum1);
 
