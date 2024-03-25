@@ -22,14 +22,26 @@ public class Main {
             int y1 = arr[i][1];
             int x2 = 0;
             int y2 = 0;
-            for(int j = i + 1; j < n; j++) {
-                if(arr[j][0] == x1)
-                y2 = arr[j][1];
-                if(arr[j][1] == y1)
-                x2 = arr[j][0];
+            int x3 = 0;
+            int y3 = 0;
+            //x축 일치하는 좌표 찾는 반복문
+            for(int j = 0; j < n; j++) {
+                if(i == j || arr[i][0] != arr[j][0])
+                continue;
 
-                int s = Math.abs(x2 - x1) * Math.abs(y2 - y1);
-                ans = Math.max(ans, s);
+                x2 = arr[j][0];
+                y2 = arr[j][1];
+                //y축 일치하는 좌표 찾는 반복문
+                for(int k = 0; k < n; k++) {
+                    if(k == i || k == j || arr[i][1] != arr[k][1])
+                    continue;
+
+                    x3 = arr[k][0];
+                    y3 = arr[k][1];
+
+                    int s = (int)Math.abs((x1 * y2 + x2 * y3 + x3 * y1) - (x2 * y1 + x3 * y2 + x1 * y3));
+                    ans = Math.max(s, ans);
+                }
             }
         }
         System.out.println(ans);
