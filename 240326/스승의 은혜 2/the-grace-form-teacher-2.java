@@ -28,7 +28,7 @@ public class Main {
             for(int j = 0; j < n; j++) {
                 if(i == j) continue;
 
-                if(price[j] > b) continue;
+                if(price[j] > assume) continue;
 
                 p += price[j];
                 assume -= price[j];
