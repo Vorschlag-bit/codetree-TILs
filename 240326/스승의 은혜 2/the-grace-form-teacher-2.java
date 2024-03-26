@@ -31,7 +31,7 @@ public class Main {
                 if(price[j] > b) continue;
 
                 p += price[j];
-                b -= price[j];
+                assume -= price[j];
                 cnt++;
             }
             ans = Math.max(cnt, ans);
