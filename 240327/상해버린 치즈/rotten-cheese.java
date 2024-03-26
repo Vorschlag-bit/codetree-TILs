@@ -33,6 +33,7 @@ public class Main {
         }
         int ans = 0;
         int cheez = 0;
+        int[] alreadyeat = new int[n + 1];
         for(int i = 0; i < s; i++) {
             //병의 기록을 보고 상한 치즈 후보군를 찾는 반복문.
             int sickperson = sick[i];
@@ -49,12 +50,15 @@ public class Main {
                         check = false;
                         break;
                     }
-                    if(candidate == ch[k])
-                    med++;
+                    if((candidate == ch[k]) && alreadyeat[person[k]] == 0) {
+                        alreadyeat[person[k]]++;
+                        med++;
+                    }
                 }
                 if(check)
                 ans = Math.max(med, ans);
             }
+            if(check)
             cheez = candidate;
         }
         System.out.println(ans);
