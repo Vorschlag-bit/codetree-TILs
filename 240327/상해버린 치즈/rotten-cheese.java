@@ -33,7 +33,6 @@ public class Main {
         }
         int ans = 0;
         int cheez = 0;
-        int[] alreadyeat = new int[n + 1];
         for(int i = 0; i < s; i++) {
             //병의 기록을 보고 상한 치즈 후보군를 찾는 반복문.
             int sickperson = sick[i];
@@ -43,13 +42,16 @@ public class Main {
             for(int j = 0; j < d; j++) {
                 if(sickperson == person[j] && time[j] < paintime)
                 candidate = ch[j];
+                int[] alreadyeat = new int[n + 1]; //후보군이 2개 이상일 경우, 최대의 약보유를 찾아야 함.
                 int med = 0;
                 //상한 치즈인지 확인하는 반복문.
                 for(int k = 0; k < d; k++) {
+                    //현 상한 후보군을 먹은 사람이 이전 후보군을 먹은 기록이 있는지 체크.
                     if(sickperson == person[k] && cheez == ch[k]) {
                         check = false;
                         break;
                     }
+                    //이미 상치 먹은 사람이 2개 이상 먹는지 확인.
                     if((candidate == ch[k]) && alreadyeat[person[k]] == 0) {
                         alreadyeat[person[k]]++;
                         med++;
