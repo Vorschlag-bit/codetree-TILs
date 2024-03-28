@@ -19,7 +19,6 @@ public class Main {
 
         for(int i = 0; i < n; i++) {
             int boom = arr[i];
-            boolean Check = false;
             for(int j = 0; j < n; j++) {
                 if(i == j) continue;
 
