@@ -19,10 +19,8 @@ public class Main {
             int currcnt = 0; // 내부 루프 밖으로 옮김
             for(int j = 0; j < n; j++) {
                 for(int k = j + 1; k < n; k++) {
-                    int diff1 = Math.abs(i - arr[j]);
-                    int diff2 = Math.abs(arr[k] - i);
-
-                    if(diff1 == diff2) currcnt++;
+                    if(arr[k] + arr[j] == 2 * i)
+                    currcnt++;
                 }
             }
             cnt = Math.max(cnt, currcnt); // 외부 루프에서 최대값 갱신
