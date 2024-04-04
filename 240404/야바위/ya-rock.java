@@ -25,14 +25,9 @@ public class Main {
             Arrays.fill(arr, 0);
             arr[i] = 1;
             for(int j = 0; j < n; j++) {
-                if(arr[a[j]] == 1) {
-                    arr[a[j]]--;
-                    arr[b[j]]++;
-                }
-                else if(arr[b[j]] == 1) {
-                    arr[b[j]]--;
-                    arr[a[j]]++;
-                }
+                int temp = arr[a[j]];
+                arr[a[j]] = arr[b[j]];
+                arr[b[j]] = temp;
 
                 if(arr[c[j]] == 1) cnt++;
             }
