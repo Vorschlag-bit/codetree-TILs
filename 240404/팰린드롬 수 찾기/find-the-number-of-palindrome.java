@@ -16,12 +16,11 @@ public class Main {
             String num = Integer.toString(i);
             int l = num.length();
             boolean Check = true;
-            for(int j = 0; j < l / 2; j++) {
-                if(num.charAt(j) != num.charAt(l - j - 1)) {
-                    Check = false;
-                    break;
-                }
+            String reverse = "";
+            for(int j = l - 1; j >= 0; j--) {
+                reverse += num.charAt(j);
             }
+            if(!num.equals(reverse)) Check = false;
             if(Check) cnt++;
         }
         System.out.println(cnt);
