@@ -11,14 +11,14 @@ public class Main {
         int c = Integer.parseInt(st.nextToken());
 
         int ans = 0;
-        for(int i = 0; i < 1000; i++) {
-            for(int j = 0; j < 1000; j++) {
-                int sum = 0;
-                sum += a * i + b * j;
+        for(int i = 0; i * a <= c; i++) {
 
-                if(sum <= c)
-                ans = Math.max(sum, ans);
-            }
+            int value = a * i;
+
+            int numB = (c - value) / b;
+
+            value += numB * b;
+            ans = Math.max(value, ans);
         }
         System.out.println(ans);
     }
