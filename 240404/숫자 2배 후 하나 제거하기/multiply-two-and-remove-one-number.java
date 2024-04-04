@@ -14,7 +14,7 @@ public class Main {
         for(int i = 0; i < n; i++)
         arr[i] = Integer.parseInt(st.nextToken());
 
-        int Mindiff = 100;
+        int Mindiff = Integer.MAX_VALUE;
         for(int i = 0; i < n; i++) {
             arr[i] *= 2;
             
