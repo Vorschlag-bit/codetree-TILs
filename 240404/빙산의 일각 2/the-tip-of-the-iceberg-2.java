@@ -17,14 +17,16 @@ public class Main {
         for(int i = 1; i <= 1000; i++) {
             //빙산 높이 완전탐색.
             int cnt = 0;
-            for(int j = 0; j < n - 1; j++) {
+
+            if(arr[0] > i) cnt++;
+
+            for(int j = 1; j < n; j++) {
                 int h = arr[j] - i;
-                int h2 = arr[j + 1] - i;
+                int h2 = arr[j - 1] - i;
 
                 if(h > 0 && h2 <= 0) cnt++;
                 
             }
-            if(arr[n - 2] <= i && arr[n - 1] > i) cnt++;
             ans = Math.max(ans, cnt);
         }
         System.out.println(ans);
