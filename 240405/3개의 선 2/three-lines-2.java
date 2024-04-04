@@ -55,8 +55,8 @@ public class Main {
                     continue;
 
                     Check = false;
-                    if(Check) ans = 1;
                    }
+                   if(Check) ans = 1;
                 }
             }            
         }
