@@ -22,7 +22,7 @@ public class Main {
         }
 
         int ans = Max;
-        for(int i = Max; i >= arr[0]; i--) {
+        for(int i = Max; i >= Math.max(arr[0], arr[n - 1]); i--) {
             if(Check(i))
             ans = Math.min(ans, i);
         }
