@@ -34,7 +34,6 @@ public class Main {
                 if(next > n) Check = false;
             }
 
-            boolean Real = false;
             if(Check) {
                 arr2[n - 1] = next;
                 for(int a = 0; a < n; a++)
