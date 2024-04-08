@@ -22,7 +22,7 @@ public class Main {
         }
 
         int ans = Max;
-        for(int i = Max; i >= 1; i--) {
+        for(int i = Max; i >= arr[0]; i--) {
             if(Check(i))
             ans = Math.min(ans, i);
         }
@@ -36,7 +36,6 @@ public class Main {
             if(arr[i] <= Maxv)
             instep[cnt++] = i;
         }
-        if(cnt == 1) return false;
 
         for(int i = 1; i < cnt; i++) {
             int dis = instep[i] - instep[i - 1];
