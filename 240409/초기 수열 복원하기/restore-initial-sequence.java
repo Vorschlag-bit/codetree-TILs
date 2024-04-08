@@ -27,7 +27,7 @@ public class Main {
                 int temp = next;
                 arr2[j] = temp;
                 next = arr[j] - temp;
-                if(temp == next || next == 0 || next > n) {
+                if(temp == next || next <= 0 || next > n) {
                     Check = false;
                     break;
                 }
