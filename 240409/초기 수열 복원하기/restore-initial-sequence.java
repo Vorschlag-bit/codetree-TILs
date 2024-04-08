@@ -27,15 +27,18 @@ public class Main {
                 int temp = next;
                 arr2[j] = temp;
                 next = arr[j] - temp;
-                if(temp == next) {
+                if(temp == next || next == 0 || next > n) {
                     Check = false;
                     break;
                 }
+                if(next > n) Check = false;
             }
+
+            boolean Real = false;
             if(Check) {
                 arr2[n - 1] = next;
-                for(int j = 0; j < n; j++)
-                System.out.print(arr2[j] + " ");
+                for(int a = 0; a < n; a++)
+                System.out.print(arr2[a] + " ");
                 break;
             }
         }
