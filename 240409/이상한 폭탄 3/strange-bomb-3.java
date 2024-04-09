@@ -16,18 +16,22 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        int ans = 0; int max = 0;
-        for(int j = 0; j < n; j++) {
+        int maxcnt = 0; int max = 0;
+        for(int i = 0; i < n; i++) {
+            int bomb = arr[i];
+            int idx = i;
             int cnt = 0;
-            for(int l = j + 1; l < n; l++) {
-               if(arr[j] == arr[l] && j - l <= k)
-                cnt++;
+            for(int j = i + 1; j < n; j++) {
+                if(arr[j] == bomb && j - idx <= k) {
+                    idx = j;
+                    cnt++;
                 }
-                if(cnt > max) {
-                    max = cnt;
-                    ans = arr[j]; 
-      }
-    }
-    System.out.print(ans);
+            }
+            if(cnt != 0 && cnt >= maxcnt && bomb > max) {
+                maxcnt = cnt;
+                max = bomb;
+            }
+        }
+        System.out.print(max);
     }
 }
