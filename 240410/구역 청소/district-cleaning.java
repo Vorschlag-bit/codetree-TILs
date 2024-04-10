@@ -16,16 +16,15 @@ public class Main {
         int c = Integer.parseInt(st.nextToken());
         int d = Integer.parseInt(st.nextToken());
 
-        for(int i = a; i <= b; i++)
-        arr[i]++;
-
-        for(int i = c; i <= d; i++)
-        arr[i]++;
-
         int ans = 0;
-        for(int i = 0; i <= 100; i++)
-        if(arr[i] > 0) ans++;
 
-        System.out.println(ans - 1);
+        //겹칠 경우
+        if(c <= a && a <= d || c <= b && b <= d)
+        ans = Math.max(d - a, b - c);
+
+        //안 겹칠 경우
+        else ans = (d - c) + (b - a);
+
+        System.out.println(ans);
     }
 }
