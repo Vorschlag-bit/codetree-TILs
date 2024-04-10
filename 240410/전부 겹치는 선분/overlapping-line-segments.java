@@ -15,19 +15,21 @@ public class Main {
             x1[i] = Integer.parseInt(st.nextToken());
             x2[i] = Integer.parseInt(st.nextToken());
         }
-        String ans = "No";
+        
+        int[] arr = new int[101];
+
         for(int i = 0; i < n; i++) {
             int curx1 = x1[i];
             int curx2 = x2[i];
-            boolean Check = true;
-            for(int j = 0; j < n; j++) {
-                if(curx2 < x1[i] || curx1 > x2[i]) {
-                    Check = false;
-                    break;
-                }
-            }
-            if(Check) ans = "Yes";
+            for(int j = curx1; j <= curx2; j++)
+            arr[j]++;
         }
-        System.out.print(ans);
+
+        boolean Check = false;
+        for(int i = 1; i <= 100; i++)
+        if(arr[i] == n) Check = true;
+
+        if(Check) System.out.print("Yes");
+        else System.out.print("No");
     }
 }
