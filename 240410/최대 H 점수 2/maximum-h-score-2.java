@@ -33,8 +33,7 @@ public class Main {
                 hcnt++;
             }
 
-            if(hcnt < h) Check = false;
-            if(Check)
+            if(hcnt >= h)
             ans = Math.max(ans, h);
         }
         System.out.print(ans);
