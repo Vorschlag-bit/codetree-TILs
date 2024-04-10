@@ -18,8 +18,6 @@ public class Main {
 
         int ans = 0;
         for(int h = 0; h <= 100; h++) {
-            //h가 될 수 있는지 판별하는 함수
-            boolean Check = true;
             int hcnt = 0;
             int lcnt = 0;
             for(int i = 0; i < n; i++) {
