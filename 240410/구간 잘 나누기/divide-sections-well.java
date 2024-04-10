@@ -43,7 +43,7 @@ public class Main {
 
                 sum += arr[j];
             }
-            if(Check && part == m) {
+            if(Check && part <= m) {
                     ans = Math.min(ans, i);
             }
         }
