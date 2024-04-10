@@ -23,8 +23,8 @@ public class Main {
         ans = Math.max(d - a, b - c);
 
         //포함되는 경우
-        else if(c <= a && b <= d || a <= c && d <= b)
-        ans = Math.max(c - d, b - a);
+        if(c <= a && b <= d || a <= c && d <= b)
+        ans = Math.max(d - c, b - a);
 
         //안 겹칠 경우
         else ans = (d - c) + (b - a);
