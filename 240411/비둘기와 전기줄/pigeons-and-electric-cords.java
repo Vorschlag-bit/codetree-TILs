@@ -29,7 +29,7 @@ public class Main {
                 pdir[p] = dir;
             }
             //두 번째로 기록된 비둘기고 건너갔다면 카운트.
-            else if(pn[p] == true && pdir[p] != dir) {
+            else if(pdir[p] != dir) {
                 pdir[p] = dir;
                 ans++;
             }
