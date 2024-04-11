@@ -34,6 +34,14 @@ public class Main {
          //만약 다 봤다면 true처리
          if(ms[p].view == 0)
          Arrays.fill(talker, true);
+         //전사람 거까지 비교하고 view 수가 같다면 채팅참여자이므로 제거.
+         for(int i = p; i >= 0; i--) {
+            int t = ms[i].par - 'A';
+            int v = ms[i].view;
+
+            if(v == ms[p].view)
+            talker[t] = true;
+         }
 
          for(int i = p; i < m; i++) {
             //p번째 메세지 이후부터 보낸 이들 확인.
