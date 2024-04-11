@@ -6,27 +6,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
         
-        int ans = Integer.MAX_VALUE;
-        for (int i = 1; i < x; i++) {
-            int speed = 1;
-            int time = 0;
-            int road = 0;
-            while (road < x) {
-                road += speed;
-
-                if (time >= 1 && road < i) {
-                    speed++;
-                } else if (speed > 1) {
-                    speed--;
-                }
-
-                time++;
-            } 
-            if (speed == 1) {
-                ans = Math.min(ans, time);
-            }
+        int time = 1;
+        int speed = 1;
+       
+       while(x > 0) {
+         if(speed < 1) break;
+        time++;
+        x -= speed;
+        //속도를 1높일 경우 필요한 최소 거리
+        int mindis = (speed + 2) * (speed + 1)/2;
+        if(mindis < x) {
+            speed++;
         }
-
-        System.out.print(ans);
+        //감속
+        if(mindis > x) {
+            speed--;
+        }
+       }
+       System.out.print(time);
     }
 }
