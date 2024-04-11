@@ -30,7 +30,10 @@ public class Main {
 
             ms[i] = new Message(c, v);
         }
-
+        //다 봤다면 전부 본 걸로 처리
+        if(ms[p].view == 0)
+        Arrays.fill(talker, true);
+        
         for (int i = p; i >= 0; i--) {
             if (ms[i].view == ms[p].view) {
                 talker[ms[i].par - 'A'] = true;
