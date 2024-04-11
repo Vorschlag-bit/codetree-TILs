@@ -31,7 +31,10 @@ public class Main {
 
             ms[i] = new Message(c, v);
          }
-         
+         //만약 다 봤다면 true처리
+         if(ms[p].view == 0)
+         Arrays.fill(talker, true);
+
          for(int i = p; i < m; i++) {
             //p번째 메세지 이후부터 보낸 이들 확인.
             int viewer = ms[i].par - 'A';
