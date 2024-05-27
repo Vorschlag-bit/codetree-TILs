@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.*;
+
 public class Main {
     public static void main(String[] args)throws IOException {
-        // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
@@ -15,37 +15,31 @@ public class Main {
             arr[i] = st.nextToken().charAt(0) - 'A';
         }
 
-        //1번째: 정렬 방향은 오른쪽으로 통일하되
-        //자기 오른쪽에 위치한 원소와 비교하여 자리교환
+        // 1번째: 오른쪽으로 정렬
         int ans = 0;
         for(int i = 0; i < n - 1; i++) {
-            int time = 0;
-            int idx = i;
-            for(int j = i + 1; j < n; j++) {
-                if(arr[idx] > arr[j]) {
-                    int temp = arr[idx];
-                    arr[idx] = arr[idx + 1];
-                    arr[idx + 1] = temp;
-                    idx++;
+            for(int j = 0; j < n - 1 - i; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     ans++;
                 }
             }
         }
 
-        //2번째 정렬: 자기 왼쪽에 위치한 원소와 비교하여 자리교환
+        // 2번째: 왼쪽으로 정렬
         for(int i = 1; i < n; i++) {
-            int time = 0;
-            int idx = i;
-            for(int j = i; j >= 0; j--) {
-                if(arr[j] > arr[idx]) {
-                    int temp = arr[idx];
-                    arr[idx] = arr[idx - 1];
-                    arr[idx - 1] = temp;
-                    idx--;
+            for(int j = i; j > 0; j--) {
+                if(arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
                     ans++;
                 }
             }
         }
+
         System.out.print(ans);
     }
 }
