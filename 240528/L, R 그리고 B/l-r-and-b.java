@@ -22,6 +22,8 @@ public class Main {
             }
         }
         int dis = Math.abs(Bi - Li) + Math.abs(Bj - Lj) - 1;
+        if(Bi == Li || Bj == Lj) System.out.print(dis + 2);
+        else
         System.out.print(dis);
     }
 }
