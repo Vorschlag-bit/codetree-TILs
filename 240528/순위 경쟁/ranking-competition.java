@@ -47,13 +47,13 @@ public class Main {
     }
     static int Check(int as, int bs, int cs) {
         //1. A만 등록
-        if(as > bs && as > cs && bs != cs)
+        if(as > bs && as > cs)
         return 1;
         //2. B만 등록
-        else if(bs > as && bs > cs && as != cs)
+        else if(bs > as && bs > cs)
         return 2;
         //3. C만 등록
-        else if(cs > as && cs > bs && as != bs)
+        else if(cs > as && cs > bs)
         return 3;
         //4. A, B 등록
         else if(as == bs && as > cs)
