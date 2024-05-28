@@ -32,10 +32,10 @@ public class Main {
 
         int dis = Math.abs(Bi - Li) + Math.abs(Bj - Lj) - 1;
         //i로 일자이면서 l과 b사이에 R이 있는 경우
-        if(istraight && (Li > Ri)&&(Ri > Bi) || (Li < Ri)&&(Ri < Bi))
+        if(istraight && ((Li > Ri)&&(Ri > Bi) || (Li < Ri)&&(Ri < Bi)))
         System.out.print(dis + 2);
         //j로 일자면서 l과 b사이에 R이 있는 경우
-        else if(jstraight && (Lj > Rj)&&(Rj > Bj) || (Lj < Rj)&&(Rj < Bj))
+        else if(jstraight && ((Lj > Rj)&&(Rj > Bj) || (Lj < Rj)&&(Rj < Bj)))
         System.out.print(dis + 2);
         else
         System.out.print(dis);
