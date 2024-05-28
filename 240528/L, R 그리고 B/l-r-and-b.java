@@ -25,9 +25,18 @@ public class Main {
                 }
             }
         }
+        boolean istraight = false;
+        boolean jstraight = false;
+        if(Li == Bi) istraight = true;
+        if(Bj == Lj) jstraight = true;
+
         int dis = Math.abs(Bi - Li) + Math.abs(Bj - Lj) - 1;
-        if(((Bi == Li)&&(Li == Ri) || (Bj == Lj)&&(Lj == Rj)))
-         System.out.print(dis + 2);
+        //i로 일자이면서 l과 b사이에 R이 있는 경우
+        if(istraight && (Li > Ri)&&(Ri > Bi) || (Li < Ri)&&(Ri < Bi))
+        System.out.print(dis + 2);
+        //j로 일자면서 l과 b사이에 R이 있는 경우
+        else if(jstraight && (Lj > Rj)&&(Rj > Bj) || (Lj < Rj)&&(Rj < Bj))
+        System.out.print(dis + 2);
         else
         System.out.print(dis);
     }
