@@ -20,7 +20,7 @@ public class Main {
 
         int ans = 0;
         if(even > odd)
-        ans = even + odd;
+        ans = odd * 2 + 1;
         else if(even == 0) {
             if(odd % 3 == 0) ans = (odd / 3) * 2;
 
