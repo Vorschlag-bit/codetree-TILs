@@ -21,6 +21,8 @@ public class Main {
         int wifi = 0;
         boolean once = false;
         for(int i = 0; i < n; i++) {
+            //처음으로 사람이 사는 지점을 정하는 조건문을
+            //한번만 수행.
             if(arr[i] == 1 && !once) {
                 wifi++;
                 once = true;
