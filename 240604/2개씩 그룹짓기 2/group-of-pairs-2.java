@@ -9,25 +9,24 @@ public class Main {
 
         int[] arr = new int[2 * n];
         StringTokenizer st = new StringTokenizer(br.readLine());
-        
+
         for(int i = 0; i < 2 * n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int idx = 2 * n;
         Arrays.sort(arr);
 
-        System.out.print(maxdiff(arr));
+        System.out.print(maxdiff(arr, n));
     }
-    public static int maxdiff(int[] arr) {
-        int[] diff = new int[arr.length / 2];
+    public static int maxdiff(int[] arr, int n) {
+        int[] diff = new int[n];
 
-        for(int i = 0; i < arr.length - 1; i += 2) {
-            diff[i / 2] = Math.abs(arr[i] - arr[i + 1]);
+        for(int i = 0; i < n; i += 1) {
+            diff[i] = Math.abs(arr[i] - arr[i + n]);
         }
 
-        int max = Arrays.stream(diff).max().getAsInt();
+        int min = Arrays.stream(diff).min().getAsInt();
 
-        return max;
+        return min;
     }
 }
