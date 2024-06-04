@@ -6,9 +6,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int[] arr = new int[7];
+        long[] arr = new long[7];
 
-        int sum = 0;
+        long sum = 0;
 
         for(int i = 0; i < 7; i++){
             arr[i] = Integer.parseInt(st.nextToken());
@@ -18,9 +18,9 @@ public class Main {
         sum /= 4;
 
         Arrays.sort(arr);
-        int a = arr[0];
-        int b = arr[1];
-        int c = sum - (a + b);
+        long a = arr[0];
+        long b = arr[1];
+        long c = sum - (a + b);
 
         System.out.println(a + " " + b + " " + c);
     }
