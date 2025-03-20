@@ -65,7 +65,7 @@ for r in range(k):
             if arr[nx][ny] == 4:
                 bx,by = hx,hy
                 arr[nx][ny] = arr[hx][hy]
-                headPerson = (nx,ny)
+                t[0] = (nx,ny)
                 break
         # 몸통 - 꼬리 이동
         for p in range(1,len(t)):
@@ -77,63 +77,62 @@ for r in range(k):
     # 공발사
     hit = False
     hitTeam = 0
-    # 몫에 따라 공이 발사되는 방향 결정
-    q,rest = divmod(r,4)
+    dir_idx = r // n
+    dir_idx %= 4
+    line_idx = r % n
     # 왼쪽에서 발사
-    if q % 4 == 0:
-            for j in range(n):
+    if dir_idx == 0:
+        for j in range(n):
+            if hit: break
+            for t in team.keys():
+            # 머리사람부터 맞는지 확인
                 if hit: break
-                for t in team.keys():
-                # 머리사람부터 맞는지 확인
-                    if hit: break
-                    for idx,cord in enumerate(team[t]):
-                        # 공이 맞으면 멈추고 점수 계산 후, 맞은 팀
-                        if cord[0] == rest and cord[1] == j:
-                            score += (idx+1) * (idx+1)
-                            hit = True
-                            hitTeam = t
-                            break
+                for idx,cord in enumerate(team[t]):
+                    # 공이 맞으면 멈추고 점수 계산 후, 맞은 팀
+                    if cord[0] == line_idx and cord[1] == j:
+                        score += (idx+1) * (idx+1)
+                        hit = True
+                        hitTeam = t
+                        break
     # 아래에서 발사
-    elif q % 4 == 1:
-            for i in range(n-1,-1,-1):
+    elif dir_idx == 1:
+        for i in range(n-1,-1,-1):
+            if hit: break
+            for t in team.keys():
                 if hit: break
-                for t in team.keys():
-                    if hit: break
-                    for idx,cord in enumerate(team[t]):
-                        if cord[0] == i and cord[1] == rest:
-                            score += (idx+1) * (idx+1)
-                            hit = True
-                            hitTeam = t
-                            break
+                for idx,cord in enumerate(team[t]):
+                    if cord[0] == i and cord[1] == line_idx:
+                        score += (idx+1) * (idx+1)
+                        hit = True
+                        hitTeam = t
+                        break
     # 오른쪽에서 발사
-    elif q % 4 == 2:
-            for j in range(n-1,-1,-1):
+    elif dir_idx == 2:
+        for j in range(n-1,-1,-1):
+            if hit: break
+            for t in team.keys():
                 if hit: break
-                for t in team.keys():
-                    if hit: break
-                    for idx,cord in enumerate(team[t]):
-                        if cord[0] == rest and cord[1] == j:
-                            score += (idx+1) * (idx+1)
-                            hit = True
-                            hitTeam = t
-                            break
+                for idx,cord in enumerate(team[t]):
+                    if cord[0] == line_idx and cord[1] == j:
+                        score += (idx+1) * (idx+1)
+                        hit = True
+                        hitTeam = t
+                        break
     # 위에서 발사
     else:
-            for i in range(n):
+        for i in range(n):
+            if hit: break
+            for t in team.keys():
                 if hit: break
-                for t in team.keys():
-                    if hit: break
-                    for idx,cord in enumerate(team[t]):
-                        if cord[0] == i and cord[1] == rest:
-                            score += (idx+1) * (idx+1)
-                            hit = True
-                            hitTeam = t
-                            break
+                for idx,cord in enumerate(team[t]):
+                    if cord[0] == i and cord[1] == line_idx:
+                        score += (idx+1) * (idx+1)
+                        hit = True
+                        hitTeam = t
+                        break
     # 공 맞은 팀 머리와 꼬리 바꾸기
     if hit:
         change_team = team[hitTeam]
-        tmp = change_team[0]
-        change_team[0] = change_team[-1]
-        change_team[-1] = tmp
+        team[hitTeam] = change_team[::-1]
 
 print(score)
