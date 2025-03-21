@@ -135,6 +135,10 @@ for r in range(k):
     if hit:
         change_team = team[hitTeam]
         team[hitTeam] = change_team[::-1]
-        team[-hitTeam] = team.pop(hitTeam)
+        team[hitTeam] = team.pop(hitTeam)
+        head = team[hitTeam][0]
+        arr[head[0]][head[1]] = 1
+        tail = team[hitTeam][-1]
+        arr[tail[0]][tail[1]] = 3
 
 print(score)
