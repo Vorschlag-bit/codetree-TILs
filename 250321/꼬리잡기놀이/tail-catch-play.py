@@ -111,10 +111,10 @@ for r in range(k):
     elif dir_idx == 2:
         for i in range(n-1,-1,-1):
             if hit: break
-            for t in team.keys():
+            for t in team.keys():   
                 if hit: break
                 for idx,cord in enumerate(team[t]):
-                    if cord[0] == line_idx and cord[1] == i:
+                    if cord[0] == n - 1 - line_idx and cord[1] == i:
                         score += (idx+1) * (idx+1)
                         hit = True
                         hitTeam = t
@@ -126,7 +126,7 @@ for r in range(k):
             for t in team.keys():
                 if hit: break
                 for idx,cord in enumerate(team[t]):
-                    if cord[0] == i and cord[1] == line_idx:
+                    if cord[0] == i and cord[1] == n - 1 - line_idx:
                         score += (idx+1) * (idx+1)
                         hit = True
                         hitTeam = t
